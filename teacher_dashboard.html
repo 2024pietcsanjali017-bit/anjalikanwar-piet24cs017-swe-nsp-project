@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse - Teacher Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>EduVerse</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="#" class="nav-item" data-page="mark-attendance"><i class="fas fa-calendar-check"></i><span>Mark Attendance</span></a>
+            <a href="#" class="nav-item" data-page="student-list"><i class="fas fa-user-graduate"></i><span>Student List</span></a>
+            <a href="#" class="nav-item" data-page="upload-marks"><i class="fas fa-upload"></i><span>Upload Marks</span></a>
+            <a href="#" class="nav-item" data-page="salary"><i class="fas fa-money-bill-wave"></i><span>Salary Details</span></a>
+            <a href="#" class="nav-item" data-page="schedule"><i class="fas fa-calendar-alt"></i><span>My Schedule</span></a>
+            <a href="#" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span>Settings</span></a>
+            <a href="#" class="nav-item logout" data-page="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <h1 id="pageTitle">Teacher Dashboard</h1>
+            <div class="header-actions">
+                <div class="user-info">
+                    <div class="user-details">
+                        <span id="userName">Dr. Rajesh Verma</span>
+                        <span class="user-reg">Faculty ID: FAC001</span>
+                    </div>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- HOME PAGE -->
+            <div class="page-content" id="home-content">
+                <div class="teacher-info-card">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="student-details">
+                        <h2>Dr. Rajesh Verma</h2>
+                        <p><strong>Faculty ID:</strong> FAC001</p>
+                        <p><strong>Department:</strong> Computer Science & Engineering</p>
+                        <p><strong>Designation:</strong> Associate Professor</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="card card-blue">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <div class="card-info">
+                            <h3>Total Students</h3>
+                            <p>Across all sections</p>
+                            <span class="card-value">180</span>
+                        </div>
+                    </div>
+                    <div class="card card-green">
+                        <div class="card-icon"><i class="fas fa-book"></i></div>
+                        <div class="card-info">
+                            <h3>Subjects Teaching</h3>
+                            <p>Current semester</p>
+                            <span class="card-value">3</span>
+                        </div>
+                    </div>
+                    <div class="card card-purple">
+                        <div class="card-icon"><i class="fas fa-calendar-week"></i></div>
+                        <div class="card-info">
+                            <h3>Classes This Week</h3>
+                            <p>Scheduled classes</p>
+                            <span class="card-value">12</span>
+                        </div>
+                    </div>
+                    <div class="card card-orange">
+                        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="card-info">
+                            <h3>Pending Tasks</h3>
+                            <p>Marks to upload</p>
+                            <span class="card-value">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARK ATTENDANCE PAGE -->
+            <div class="page-content hidden" id="mark-attendance-content">
+                <div class="content-card">
+                    <h2>Mark Attendance</h2>
+                    <div class="attendance-controls">
+                        <div class="form-group">
+                            <label>Select Section:</label>
+                            <select class="form-select">
+                                <option>B.Tech CSE 3rd Year A</option>
+                                <option>B.Tech CSE 3rd Year B</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Subject:</label>
+                            <select class="form-select">
+                                <option>Software Engineering</option>
+                                <option>Data Structures</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date:</label>
+                            <input type="date" class="form-input" value="2025-11-06">
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Roll No</th><th>Name</th><th>Status</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2021CSE001</td><td>Rahul Sharma</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                            <tr><td>2021CSE002</td><td>Priya Patel</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                            <tr><td>2021CSE003</td><td>Amit Kumar</td><td><span class="badge badge-success">Present</span></td><td><button class="btn-small btn-success">P</button><button class="btn-small btn-danger">A</button></td></tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-primary">Save Attendance</button>
+                </div>
+            </div>
+
+            <!-- STUDENT LIST PAGE -->
+            <div class="page-content hidden" id="student-list-content">
+                <div class="content-card">
+                    <h2>My Students</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Reg No</th><th>Name</th><th>Section</th><th>Contact</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2021CSE001</td><td>Rahul Sharma</td><td>B.Tech CSE 3rd Year A</td><td>9876543210</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>2021CSE002</td><td>Priya Patel</td><td>B.Tech CSE 3rd Year A</td><td>9876543211</td><td><button class="btn-icon"><i class="fas fa-eye"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- UPLOAD MARKS PAGE -->
+            <div class="page-content hidden" id="upload-marks-content">
+                <div class="content-card">
+                    <h2>Upload Marks</h2>
+                    <div class="form-group">
+                        <label>Select Exam:</label>
+                        <select class="form-select">
+                            <option>Mid Semester</option>
+                            <option>End Semester</option>
+                        </select>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Reg No</th><th>Name</th><th>Marks</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2021CSE001</td><td>Rahul Sharma</td><td><input type="number" class="form-input" placeholder="Enter marks" style="width:100px"></td><td><button class="btn-primary">Save</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SALARY PAGE -->
+            <div class="page-content hidden" id="salary-content">
+                <div class="content-card">
+                    <h2>Salary Details</h2>
+                    <div class="salary-summary">
+                        <div class="salary-card">
+                            <h3>Basic Salary</h3>
+                            <p class="salary-amount">₹85,000</p>
+                        </div>
+                        <div class="salary-card">
+                            <h3>Allowances</h3>
+                            <p class="salary-amount">₹25,000</p>
+                        </div>
+                        <div class="salary-card">
+                            <h3>Net Salary</h3>
+                            <p class="salary-amount">₹1,10,000</p>
+                        </div>
+                    </div>
+                    <h3>Salary History</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Month</th><th>Amount</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>October 2025</td><td>₹1,10,000</td><td><span class="badge badge-success">Paid</span></td></tr>
+                            <tr><td>September 2025</td><td>₹1,10,000</td><td><span class="badge badge-success">Paid</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SCHEDULE PAGE -->
+            <div class="page-content hidden" id="schedule-content">
+                <div class="content-card">
+                    <h2>Weekly Schedule</h2>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>9:00-10:00</td><td>SE (CSE-A)</td><td>-</td><td>SE (CSE-B)</td><td>-</td><td>SE (CSE-A)</td></tr>
+                            <tr><td>10:00-11:00</td><td>-</td><td>DSA (CSE-A)</td><td>-</td><td>DSA (CSE-B)</td><td>-</td></tr>
+                            <tr><td>11:00-12:00</td><td>DSA (CSE-B)</td><td>-</td><td>DSA (CSE-A)</td><td>-</td><td>SE (CSE-B)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SETTINGS PAGE -->
+            <div class="page-content hidden" id="settings-content">
+                <div class="content-card">
+                    <h2>Settings</h2>
+                    <div class="settings-section">
+                        <h3><i class="fas fa-user"></i> Profile Settings</h3>
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-input" value="Dr. Rajesh Verma">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-input" value="rajesh@college.edu">
+                        </div>
+                        <button class="btn-primary">Update Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="teacher_dashboard.js"></script>
+</body>
+</html>
